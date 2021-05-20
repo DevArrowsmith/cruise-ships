@@ -1,4 +1,4 @@
-function Ship () {
+function Ship (startingPort) {
 };
 
 module.exports = Ship;
