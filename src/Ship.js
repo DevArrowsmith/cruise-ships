@@ -1,8 +1,7 @@
-function Ship (startingPort) {
-    this.currentPort = startingPort;
-};
-
-Ship.prototype = {
+class Ship {
+    constructor(startingPort) {
+        this.currentPort = startingPort;
+    };
     setSail () {
         this.currentPort = undefined;
     }
