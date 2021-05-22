@@ -1,5 +1,6 @@
 class Itineary {
     constructor () {
+        this.ports = [...arguments];
     };
 };
 
