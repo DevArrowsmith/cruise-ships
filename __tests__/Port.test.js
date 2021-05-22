@@ -1,10 +1,16 @@
 const Port = require("../src/Port");
 
+
 describe("Port", () => {
+
+    beforeEach(() => {
+        port = new Port("Lisbon");
+    });
+
     it("returns an object", () => {
-        expect(new Port()).toBeInstanceOf(Object);
+        expect(port).toBeInstanceOf(Object);
     });
     it("is created with a specified 'name' value", () => {
-        expect(new Port("Lisbon").name).toBe("Lisbon")
+        expect(port.name).toBe("Lisbon")
     })
 });
