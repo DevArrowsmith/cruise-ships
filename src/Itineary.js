@@ -1,6 +1,5 @@
 class Itineary {
     constructor () {
-
     };
 };
 
