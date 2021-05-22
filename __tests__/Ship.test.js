@@ -14,4 +14,10 @@ describe("Ship", () => {
         ship.setSail();
         expect(ship.currentPort).toBeFalsy();
     });
+    it("can dock at a new port", () => {
+        ship.currentPort = undefined;
+        expect(ship.currentPort).toBeFalsy();
+        ship.dock({});
+        expect(ship.currentPort).toBeInstanceOf(Object);
+    })
 });
