@@ -19,10 +19,10 @@ describe("Ship", () => {
         ship.setSail();
         expect(ship.currentPort).toBeFalsy();
     });
-    it("can dock at a new port", () => {
+    it("can dock at the next port in the itineary when 'currentPort' is undefined", () => {
+        console.log(ship);
         ship.currentPort = undefined;
-        expect(ship.currentPort).toBeFalsy();
-        ship.dock({});
-        expect(ship.currentPort).toBeInstanceOf(Object);
+        ship.dock();
+        expect(ship.currentPort).toBe(ship.itineary.ports[1]);
     })
 });
