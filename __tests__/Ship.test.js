@@ -15,9 +15,6 @@ describe("Ship", () => {
     it("has an initial 'currentPort' value equal to the value of the first element in the 'ports' array of the 'itineary' property", () => {
         expect(ship.currentPort).toBe(ship.itineary.ports[0]);
     });
-    it("has an initial 'previousPort' value of undefined", () => {
-        expect(ship.previousPort).toBe(undefined);
-    });
     it("can set sail when currentPort is not undefined", () => {
         ship.setSail();
         expect(ship.currentPort).toBeFalsy();
