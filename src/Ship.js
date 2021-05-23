@@ -10,6 +10,9 @@ class Ship {
         if(this.currentPort === undefined) {
             return "The ship is already at sea. Please dock before attempting to set sail.";
         };
+        if(this.currentPortNumber === this.itineary.ports.length - 1) {
+            return "The ship has reached its final destination and cannot currently set sail.";
+        };
         this.currentPort = undefined;
     };
     dock() {
