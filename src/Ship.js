@@ -8,7 +8,7 @@ class Ship {
     };
     setSail () {
         if(this.currentPort === undefined) {
-            return `The ship is already at sea. Please dock before attempting to set sail.`;
+            return "The ship is already at sea. Please dock before attempting to set sail.";
         };
         this.currentPort = undefined;
     };

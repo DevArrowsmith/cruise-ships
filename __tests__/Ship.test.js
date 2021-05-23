@@ -23,6 +23,10 @@ describe("Ship", () => {
         ship.currentPort = undefined;
         expect(ship.setSail()).toBe("The ship is already at sea. Please dock before attempting to set sail.");
     });
+    it("returns an error when the setSail method is called and every port in the itineary has been visited", () => {
+        ship.currentPortNumber = 1;
+        expect(ship.setSail()).toBe("The ship has reached its final destination and cannot currently set sail.");
+    });
     it("can dock at the next port in the itineary when 'currentPort' is undefined", () => {
         ship.currentPort = undefined;
         ship.dock();
