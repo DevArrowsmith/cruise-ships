@@ -1,6 +1,6 @@
 class Ship {
     constructor(startingPort) {
-        this.currentPort = startingPort;
+        this.itineary = startingPort;
     };
     setSail () {
         this.currentPort = undefined;
