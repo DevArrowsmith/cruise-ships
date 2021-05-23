@@ -1,14 +1,18 @@
+const INITIAL_PORT_NUMBER = 0;
+
 class Ship {
     constructor(itineary) {
         this.itineary = itineary;
-        this.currentPort = this.itineary.ports[0];
+        this.currentPortNumber = INITIAL_PORT_NUMBER;
+        this.currentPort = this.itineary.ports[this.currentPortNumber];
     };
     setSail () {
         this.currentPort = undefined;
-    }
-    dock(newPort) {
-        this.currentPort = newPort;
-    }
-}
+    };
+    dock() {
+        this.currentPortNumber += 1;
+        this.currentPort = this.itineary.ports[this.currentPortNumber];
+    };
+};
 
 module.exports = Ship;
