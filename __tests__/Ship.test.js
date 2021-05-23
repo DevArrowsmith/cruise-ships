@@ -7,8 +7,8 @@ describe("Ship", () => {
     it("returns an object", () => {
         expect(ship).toBeInstanceOf(Object);
     });
-    it("is created with a specified object as the 'currentPort' value", () => {
-        expect(ship.currentPort).toBeInstanceOf(Object);
+    it("is created with a specified object as the 'itineary' value", () => {
+        expect(ship.itineary).toBeInstanceOf(Object);
     });
     it("can set sail", () => {
         ship.setSail();
