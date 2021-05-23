@@ -20,9 +20,11 @@ describe("Ship", () => {
         expect(ship.currentPort).toBeFalsy();
     });
     it("can dock at the next port in the itineary when 'currentPort' is undefined", () => {
-        console.log(ship);
         ship.currentPort = undefined;
         ship.dock();
         expect(ship.currentPort).toBe(ship.itineary.ports[1]);
+    })
+    it("returns an error when the 'dock' method is called and 'currentPort' is not undefined", () => {
+        expect(ship.dock()).toBe(`The ship is already docked at ${ship.currentPort}. Please set sail before attempting to dock.`);
     })
 });
