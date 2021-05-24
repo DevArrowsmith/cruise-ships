@@ -1,10 +1,21 @@
 const Ship = require("../src/Ship");
 
+
+
 describe("Ship", () => {
+
+    const port1 = { 
+        name: "lisbon"
+    };
+    const port2 = {
+        name: "valencia"
+    };
+    const itineary = {
+        ports: [port1, port2]
+    };
+
     beforeEach(() => {
-        ship = new Ship({
-            ports: ["lisbon", "valencia"]
-        });
+        ship = new Ship(itineary);
     });
     it("returns an object", () => {
         expect(ship).toBeInstanceOf(Object);
@@ -12,7 +23,7 @@ describe("Ship", () => {
     it("is created with a specified object as the value of the itineary parameter", () => {
         expect(ship.itineary).toBeInstanceOf(Object);
     });
-    it("has an initial currentPort value equal to the first location in the itineary", () => {
+    it("has an initial currentPort value equal to the first port object element in the itineary", () => {
         expect(ship.currentPort).toBe(ship.itineary.ports[0]);
     });
     it("can set sail when currentPort is not undefined", () => {
