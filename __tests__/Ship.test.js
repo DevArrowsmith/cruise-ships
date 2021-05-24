@@ -5,10 +5,10 @@ const Ship = require("../src/Ship");
 describe("Ship", () => {
 
     const port1 = { 
-        name: "lisbon"
+        name: "Lisbon"
     };
     const port2 = {
-        name: "valencia"
+        name: "Valencia"
     };
     const itineary = {
         ports: [port1, port2]
@@ -44,6 +44,6 @@ describe("Ship", () => {
         expect(ship.currentPort).toBe(ship.itineary.ports[1]);
     })
     it("returns an error when the dock method is called and currentPort is not undefined", () => {
-        expect(ship.dock()).toBe(`The ship is already docked at ${ship.currentPort}. Please set sail before attempting to dock.`);
+        expect(ship.dock()).toBe(`The ship is already docked at Lisbon. Please set sail before attempting to dock.`);
     })
 });
