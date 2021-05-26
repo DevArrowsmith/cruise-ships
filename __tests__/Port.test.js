@@ -17,6 +17,6 @@ describe("Port", () => {
     it("can add a ship to the 'ships' array", () => {
         const ship = jest.fn();
         port.addShip(ship);
-        expect(port.ships.length).toBe(1);
+        expect(port.ships).toContain(ship);
     })
 });
