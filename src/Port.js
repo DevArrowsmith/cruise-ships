@@ -5,7 +5,7 @@ class Port {
     };
     addShip(ship) {
         this.ships.push(ship);
-    }
+    };
 };
 
 module.exports = Port;
