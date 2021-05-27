@@ -1,7 +1,5 @@
 const Ship = require("../src/Ship");
 
-
-
 describe("Ship", () => {
 
     const port1 = { 
@@ -21,7 +19,7 @@ describe("Ship", () => {
         expect(ship).toBeInstanceOf(Object);
     });
     it("is created with a specified object as the value of the itineary parameter", () => {
-        expect(ship.itineary).toBeInstanceOf(Object);
+        expect(ship.itineary).toBe(itineary);
     });
     it("has an initial currentPort value equal to the first port object element in the itineary", () => {
         expect(ship.currentPort).toBe(ship.itineary.ports[0]);
