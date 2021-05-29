@@ -4,11 +4,13 @@ describe("Ship", () => {
 
     const port1 = { 
         name: "Lisbon",
-        addShip: jest.fn()
+        addShip: jest.fn(),
+        removeShip: jest.fn()
     };
     const port2 = {
         name: "Valencia",
-        addShip: jest.fn()
+        addShip: jest.fn(),
+        removeShip: jest.fn(),
     };
     const itineary = {
         ports: [port1, port2]
@@ -27,7 +29,7 @@ describe("Ship", () => {
         expect(ship.currentPort).toBe(ship.itineary.ports[0]);
     });
     it("is added to the first port on instantiation", () => {
-        expect(ship.currentPort.addShip).toBeCalledWith(ship);
+        expect(port1.addShip).toBeCalledWith(ship);
     });
     it("can set sail when currentPort is not undefined", () => {
         ship.setSail();
