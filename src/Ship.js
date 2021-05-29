@@ -23,6 +23,7 @@ class Ship {
         };
         this.currentPortNumber += 1;
         this.currentPort = this.itineary.ports[this.currentPortNumber];
+        this.currentPort.addShip(this);
     };
 };
 
