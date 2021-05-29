@@ -5,6 +5,7 @@ class Ship {
         this.itineary = itineary;
         this.currentPortNumber = INITIAL_PORT_NUMBER;
         this.currentPort = this.itineary.ports[this.currentPortNumber];
+        this.currentPort.addShip(this);
     };
     setSail() {
         if(this.currentPort === undefined) {
