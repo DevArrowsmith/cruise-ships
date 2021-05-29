@@ -14,6 +14,7 @@ class Ship {
         if(this.currentPortNumber === this.itineary.ports.length - 1) {
             return "The ship has reached its final destination and cannot currently set sail.";
         };
+        this.currentPort.removeShip(this);
         this.currentPort = undefined;
     };
     dock() {
