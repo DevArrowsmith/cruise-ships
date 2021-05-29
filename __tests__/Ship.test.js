@@ -3,10 +3,12 @@ const Ship = require("../src/Ship");
 describe("Ship", () => {
 
     const port1 = { 
-        name: "Lisbon"
+        name: "Lisbon",
+        addShip: jest.fn()
     };
     const port2 = {
-        name: "Valencia"
+        name: "Valencia",
+        addShip: jest.fn()
     };
     const itineary = {
         ports: [port1, port2]
@@ -23,6 +25,9 @@ describe("Ship", () => {
     });
     it("has an initial currentPort value equal to the first port object element in the itineary", () => {
         expect(ship.currentPort).toBe(ship.itineary.ports[0]);
+    });
+    it("is added to the first port on instantiation", () => {
+        expect(ship.currentPort.addShip).toBeCalledWith(ship);
     });
     it("can set sail when currentPort is not undefined", () => {
         ship.setSail();
