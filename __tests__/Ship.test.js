@@ -51,7 +51,12 @@ describe("Ship", () => {
         ship.currentPort = undefined;
         ship.dock();
         expect(ship.currentPort).toBe(ship.itineary.ports[1]);
-    })
+    });
+    it("is added to the new currentPort when it docks", () => {
+        ship.currentPort = undefined;
+        ship.dock();
+        expect(port2.addShip).toBeCalledWith(ship);
+    });
     it("returns an error when the dock method is called and currentPort is not undefined", () => {
         expect(ship.dock()).toBe(`The ship is already docked at Lisbon. Please set sail before attempting to dock.`);
     })
