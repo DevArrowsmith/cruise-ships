@@ -8,8 +8,7 @@ describe("Ship", () => {
     };
     const port2 = {
         name: "Valencia",
-        addShip: jest.fn(),
-        removeShip: jest.fn(),
+        addShip: jest.fn()
     };
     const itineary = {
         ports: [port1, port2]
