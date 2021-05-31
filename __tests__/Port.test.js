@@ -1,5 +1,7 @@
 const Port = require("../src/Port");
 
+const ship = jest.fn();
+
 describe("Port", () => {
     beforeEach(() => {
         port = new Port("Lisbon");
@@ -15,12 +17,10 @@ describe("Port", () => {
         expect(port.ships.length).toBe(0);
     })
     it("can add a ship to the 'ships' array", () => {
-        const ship = jest.fn();
         port.addShip(ship);
         expect(port.ships).toContain(ship);
     })
     it("can remove a ship from the 'ships' array", () => {
-        const ship = jest.fn();
         port.ships = [ship];
         port.removeShip(ship);
         expect(port.ships.length).toBe(0);
