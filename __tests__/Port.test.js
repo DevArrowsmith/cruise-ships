@@ -3,9 +3,13 @@ const Port = require("../src/Port");
 const ship = jest.fn();
 
 describe("Port", () => {
+
+    let port;
+
     beforeEach(() => {
         port = new Port("Lisbon");
     });
+
     it("returns an object", () => {
         expect(port).toBeInstanceOf(Object);
     });

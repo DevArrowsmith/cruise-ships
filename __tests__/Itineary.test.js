@@ -1,6 +1,9 @@
 const Itineary = require("../src/Itineary");
 
 describe("Itineary", () => {
+
+    let itineary;
+    
     beforeEach(() => {
         itineary = new Itineary(jest.fn(), jest.fn());
     });

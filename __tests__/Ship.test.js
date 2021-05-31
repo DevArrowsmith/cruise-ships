@@ -1,7 +1,6 @@
 const Ship = require("../src/Ship");
 
 describe("Ship", () => {
-
     const port1 = { 
         name: "Lisbon",
         addShip: jest.fn(),
@@ -15,6 +14,8 @@ describe("Ship", () => {
     const itineary = {
         ports: [port1, port2]
     };
+
+    let ship;
 
     beforeEach(() => {
         ship = new Ship(itineary);
