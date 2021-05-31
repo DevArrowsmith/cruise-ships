@@ -31,14 +31,17 @@ describe("Ship", () => {
     it("is added to the first port on instantiation", () => {
         expect(port1.addShip).toBeCalledWith(ship);
     });
-    it("can set sail when currentPort is not undefined", () => {
-        ship.setSail();
-        expect(ship.currentPort).toBeFalsy();
+    describe("setSail", () => {
+        beforeEach(() => {
+            ship.setSail();
+        });       
+        it("can set sail when currentPort is not undefined", () => {
+            expect(ship.currentPort).toBeFalsy();
+        });
+        it("is removed from the currentPort when it sets sail", () => {
+            expect(port1.removeShip).toBeCalledWith(ship);
+        });
     });
-    it("is removed from the currentPort when it sets sail", () => {
-        ship.setSail();
-        expect(port1.removeShip).toBeCalledWith(ship);
-    })
     it("returns an error when the setSail method is called and currentPort is undefined", () => {
         ship.currentPort = undefined;
         expect(ship.setSail()).toBe("The ship is already at sea. Please dock before attempting to set sail.");
@@ -47,15 +50,17 @@ describe("Ship", () => {
         ship.currentPortNumber = 1;
         expect(ship.setSail()).toBe("The ship has reached its final destination and cannot currently set sail.");
     });
-    it("can dock at the next port in the itineary when currentPort is undefined", () => {
-        ship.currentPort = undefined;
-        ship.dock();
-        expect(ship.currentPort).toBe(ship.itineary.ports[1]);
-    });
-    it("is added to the new currentPort when it docks", () => {
-        ship.currentPort = undefined;
-        ship.dock();
-        expect(port2.addShip).toBeCalledWith(ship);
+    describe("dock", () => {
+        beforeEach(() => {
+            ship.currentPort = undefined;
+            ship.dock();
+        });
+        it("can dock at the next port in the itineary when currentPort is undefined", () => {
+            expect(ship.currentPort).toBe(ship.itineary.ports[1]);
+        });
+        it("is added to the new currentPort when it docks", () => {
+            expect(port2.addShip).toBeCalledWith(ship);
+        });
     });
     it("returns an error when the dock method is called and currentPort is not undefined", () => {
         expect(ship.dock()).toBe(`The ship is already docked at Lisbon. Please set sail before attempting to dock.`);
