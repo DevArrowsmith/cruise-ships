@@ -10,7 +10,8 @@
 </head>
 <body>
     <div id="viewport">
-
+        <div id="ports">
+        </div>
     </div>
     
     <script src="src/Port.js"></script>
@@ -20,7 +21,7 @@
     <script src="src/Controller.js"></script>
     <script>
       const controller = new Controller();
-      const itineary = new Itineary([
+      const itineary = new Itineary(
           new Port('Besaid'),
           new Port('Kilika'),
           new Port('Luca'),
@@ -28,7 +29,8 @@
           new Port('Bikanel Island'),
           new Port('Bevelle'),
           new Port('Zanarkand')
-      ])
+      );
+      controller.renderPorts(itineary.ports);
       controller.initialiseSea();
     </script>
 </body>
