@@ -3,7 +3,7 @@
         constructor (ship) {
             this.ship = ship;
             document.querySelector('#sailbutton').addEventListener('click', () => {
-                this.ship.setSail();
+                this.setSail();
             });
         };
         initialiseSea() {
@@ -37,6 +37,20 @@
             shipElement.style.top = `${portElement.offsetTop + 32}px`;
             shipElement.style.left = `${portElement.offsetLeft - 38}px`;
         };
+        setSail() {
+            const ship = this.ship;
+            const nextPort = document.querySelector(`[data-port-index="${ship.currentPortNumber + 1}"]`);
+            const shipElement = document.querySelector("#ship");
+            const sailInterval = setInterval(() => {
+                const shipLeft = parseInt(shipElement.style.left, 10);
+                if (shipLeft === (nextPort.offsetLeft - 32)) {
+                    ship.setSail();
+                    ship.dock();
+                    clearInterval(sailInterval);
+                }
+                shipElement.style.left = `${shipLeft + 1}px`;
+            }, 20);
+        }
     };
 
     if (typeof module !== 'undefined' && module.exports) {
