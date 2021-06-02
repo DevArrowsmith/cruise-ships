@@ -52,12 +52,14 @@
             if(!nextPort) {
                 return alert('End of the line!');
             };
+            this.renderMessage(`Setting sail from ${ship.currentPort.name}.`)
             const shipElement = document.querySelector("#ship");
             const sailInterval = setInterval(() => {
                 const shipLeft = parseInt(shipElement.style.left, 10);
                 if (shipLeft === (nextPort.offsetLeft - 32)) {
                     ship.setSail();
                     ship.dock();
+                    this.renderMessage(`Arrived at ${ship.currentPort.name}.`)
                     clearInterval(sailInterval);
                 }
                 shipElement.style.left = `${shipLeft + 1}px`;
