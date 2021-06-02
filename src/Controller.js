@@ -51,7 +51,9 @@
             const nextPort = document.querySelector(`[data-port-index="${ship.currentPortNumber + 1}"]`);
             document.querySelector("#sailbutton").disabled = true;
             if(!nextPort) {
-                return alert('End of the line!');
+                this.renderMessage(`Arrived at ${ship.currentPort.name}. End of the line!`);
+                document.querySelector("#sailbutton").disabled = false;
+                return;
             };
 
             this.renderMessage(`Setting sail from ${ship.currentPort.name}.`)
