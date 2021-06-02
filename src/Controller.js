@@ -66,7 +66,7 @@
                     this.renderMessage(`Arrived at ${ship.currentPort.name}.`)
                     clearInterval(sailInterval);
                     document.querySelector("#sailbutton").disabled = false;
-                }
+                };
                 shipElement.style.left = `${shipLeft + 1}px`;
             }, 20);
         }
