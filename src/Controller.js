@@ -49,9 +49,11 @@
         setSail() {
             const ship = this.ship;
             const nextPort = document.querySelector(`[data-port-index="${ship.currentPortNumber + 1}"]`);
+            document.querySelector("#sailbutton").disabled = true;
             if(!nextPort) {
                 return alert('End of the line!');
             };
+
             this.renderMessage(`Setting sail from ${ship.currentPort.name}.`)
             const shipElement = document.querySelector("#ship");
             const sailInterval = setInterval(() => {
@@ -61,6 +63,7 @@
                     ship.dock();
                     this.renderMessage(`Arrived at ${ship.currentPort.name}.`)
                     clearInterval(sailInterval);
+                    document.querySelector("#sailbutton").disabled = false;
                 }
                 shipElement.style.left = `${shipLeft + 1}px`;
             }, 20);
