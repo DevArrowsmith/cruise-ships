@@ -2,6 +2,9 @@
     class Controller {
         constructor (ship) {
             this.ship = ship;
+            document.querySelector('#sailbutton').addEventListener('click', () => {
+                this.ship.setSail();
+            });
         };
         initialiseSea() {
             const backgrounds = [
