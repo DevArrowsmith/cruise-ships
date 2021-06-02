@@ -37,6 +37,15 @@
             shipElement.style.top = `${portElement.offsetTop + 32}px`;
             shipElement.style.left = `${portElement.offsetLeft - 38}px`;
         };
+        renderMessage(message) {
+            const newMessageElement = document.createElement("div");
+            newMessageElement.id = "messagebox";
+            newMessageElement.innerHTML = message;
+            const viewportElement = document.querySelector("#viewport");
+            viewportElement.appendChild(newMessageElement);
+            const removeMessage = () => viewportElement.removeChild(document.querySelector("#messagebox"));
+            setTimeout(removeMessage, 2000);
+        };
         setSail() {
             const ship = this.ship;
             const nextPort = document.querySelector(`[data-port-index="${ship.currentPortNumber + 1}"]`);
