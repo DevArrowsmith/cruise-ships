@@ -24,7 +24,6 @@
     <script src="src/Itineary.js"></script>
     <script src="src/Controller.js"></script>
     <script>
-      const controller = new Controller();
       const itineary = new Itineary(
           new Port('Besaid'),
           new Port('Kilika'),
@@ -35,8 +34,9 @@
           new Port('Zanarkand')
       );
       const ship = new Ship(itineary);
+      const controller = new Controller(ship);
       controller.renderPorts(itineary.ports);
-      controller.renderShip(ship);
+      controller.renderShip();
       controller.initialiseSea();
     </script>
 </body>
