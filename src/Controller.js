@@ -1,6 +1,7 @@
 (function exportController() {
     class Controller {
-        constructor () {
+        constructor (ship) {
+            this.ship = ship;
         };
         initialiseSea() {
             const backgrounds = [
