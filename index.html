@@ -39,6 +39,7 @@
       controller.renderPorts(itineary.ports);
       controller.renderShip();
       controller.initialiseSea();
+      controller.renderHUD(`Current port: ${ship.currentPort.name}`, `Next port: ${ship.nextPort.name}`);
     </script>
 </body>
 </html>

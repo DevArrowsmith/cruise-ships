@@ -7,6 +7,7 @@
             this.currentPortNumber = INITIAL_PORT_NUMBER;
             this.currentPort = this.itineary.ports[this.currentPortNumber];
             this.currentPort.addShip(this);
+            this.nextPort = this.itineary.ports[this.currentPortNumber + 1];
         };
         setSail() {
             if(this.currentPort === undefined) {
