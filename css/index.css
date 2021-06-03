@@ -10,6 +10,12 @@ body {
     align-items: center;
 }
 
+#hud {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 #viewport {
     width: 640px;
     height: 256px;
