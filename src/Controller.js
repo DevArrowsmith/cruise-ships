@@ -39,12 +39,11 @@
         };
         renderHUD(message1, message2){
             const hudElement = document.querySelector("#hud");
-            const line1 = document.createElement("p");
-            const line2 = document.createElement("p");
-            line1.innerHTML = message1;
-            line2.innerHTML = message2;
-            hudElement.appendChild(line1);
-            hudElement.appendChild(line2);
+            [...arguments].forEach(hudMessage => {
+                const newHudLine = document.createElement("p");
+                newHudLine.innerHTML = hudMessage;
+                hudElement.appendChild(newHudLine);
+            });
         }
         renderMessage(message) {
             const newMessageElement = document.createElement("div");
@@ -64,7 +63,6 @@
                 document.querySelector("#sailbutton").disabled = false;
                 return;
             };
-
             this.renderMessage(`Setting sail from ${ship.currentPort.name}.`)
             const shipElement = document.querySelector("#ship");
             const sailInterval = setInterval(() => {
