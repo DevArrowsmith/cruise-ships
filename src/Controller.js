@@ -73,7 +73,10 @@
                     ship.setSail();
                     ship.dock();
                     this.renderMessage(`Arrived at ${ship.currentPort.name}.`)
-                    this.renderHUD(`Current port: ${ship.currentPort.name}.`, `Next port: ${ship.nextPort.name}.`);
+                    ship.nextPort 
+                        ? this.renderHUD(`Current port: ${ship.currentPort.name}.`, `Next port: ${ship.nextPort.name}.`)
+                        : this.renderHUD(`Current port: ${ship.currentPort.name}.`, "End of the line!")
+                    ;
                     clearInterval(sailInterval);
                     document.querySelector("#sailbutton").disabled = false;
                 };
