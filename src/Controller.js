@@ -65,7 +65,7 @@
                 return;
             };
             this.renderMessage(`Setting sail from ${ship.currentPort.name}.`)
-            this.renderHUD("Sailing...");
+            this.renderHUD(`Sailing to ${ship.nextPort.name}...`);
             const shipElement = document.querySelector("#ship");
             const sailInterval = setInterval(() => {
                 const shipLeft = parseInt(shipElement.style.left, 10);
