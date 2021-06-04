@@ -25,6 +25,7 @@
             };
             this.currentPortNumber += 1;
             this.currentPort = this.itineary.ports[this.currentPortNumber];
+            this.nextPort = this.itineary.ports[this.currentPortNumber + 1];
             this.currentPort.addShip(this);
         };
     };
